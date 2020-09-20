@@ -53,7 +53,8 @@ const Login = () => {
     }
 
     return(
-    <>
+
+    <div className='cont-form'>
             <div className='col-xl-12 col-sm-12'>
                 <h2 className='titulo'>Ingreso Exconstructor</h2><br/>             
             </div>
@@ -118,11 +119,7 @@ const Login = () => {
                 <p className='link'>Empresa? <Link to={"/VerificarEmpresa"}>Registrate ya..!</Link></p>
                 <p className='link'>Igual puedes tener <Link to={"/personaNatural"}>Cuenta Personal.!</Link></p>
             </div>
-         
-
-           
-
-    </>
+    </div>
     );
 }
 export default Login;

@@ -1,24 +1,23 @@
 
-
 body {
     background-image: url("./img/fondo.jpg");
     color:white;
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
     font-family: 'Numans', sans-serif;
+    position: relative;
+    height: auto;
   }
 
 .cont-form{
     
+    width: 30%;
+    padding: 10px;
     height: auto;
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 10%;
-    margin-bottom: 0;
     background-color: rgba(0,0,0,0.5) !important;
-    padding:0;
+    position: absolute;
+    left: 33%;
+    right: 22%;
+    margin-top: 5%;
 }
 
 .social_icon {
@@ -45,3 +44,26 @@ body {
 .link{
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: url("./img/fondo.jpg");
+        color:white;
+        width: 100%;
+        font-family: 'Numans', sans-serif;
+        position: relative;
+        height: auto;
+    }
+
+.cont-form{
+    
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    background-color: rgba(0,0,0,0.5) !important;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-top: 20%;
+}
+  }

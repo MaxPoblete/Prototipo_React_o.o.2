@@ -90,9 +90,9 @@ const VerificarEmpresa = () => {
     }
 
   return (
-    <>
+       <div className='cont-form'>
     {existeRun ? <Redirect to={"CredencialesEmpresa"} /> : 
-    
+
     <div>
 
     <div className='col-xl-12 col-sm-12'>
@@ -132,7 +132,7 @@ const VerificarEmpresa = () => {
                             <button
                                 type="submit"
                                 className="btn btn-block btn-outline-warning">
-                                Verificar Run
+                                Verificar
                             </button>
                         </div>                           
                     </div>
@@ -140,14 +140,10 @@ const VerificarEmpresa = () => {
             </div>
         </form>
     </div>
-    <div className='col-12'>
-    <p className='link'>Ingrese<Link to={"/CredencialesEmpresa"}>Credenciales Empresa</Link></p>
+    </div> 
+}
 
     </div>
-    </div> }
-
-    
-</>
   );
 }
 export default VerificarEmpresa;
