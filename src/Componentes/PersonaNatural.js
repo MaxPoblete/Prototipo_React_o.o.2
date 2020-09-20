@@ -1,55 +1,150 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Css/PersonaNatural.css'
 
 const PersonaNatural = () =>{
+
+   //state de Persona Natural
+   const [PersonaNatural, actualizarPersonaNatural] = useState({
+      nombre:'',
+      apellido:'',
+      telefono:'',
+      run:'',
+      email:'',
+      username:'',
+      password:''
+      
+   })
   return (
-    <div className='row'>
-        <h2 className='titulo'>Registro Persona Natural</h2>
-        <form>
-            <div className='col-xl-12 col-sm-12'>
-                <div className='input-group form-group'>
-                    <div className="input-group-prepend">
-                        <span className="input-group-text social_icon ">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                            <path d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
-                        </svg>
-                        </span>
-                    </div>
-                    <input
-                        className='form-control'
-                        type="text"
-                        name="run"
-                        placeholder="Ingrese Nombre"
-                        onChange={'estadoRun'}
-                        value={'run'}
-                        maxLength={9}
-                    />
-                </div>
+<>
+  <div className='row  form-persona-Natural col-sm-12 col-xl-6'>
+      <div className='col-sm-12 col-xl-12'>
+         <h3>Registro Persona Natural</h3>
+         <p id="parrafo" class="text-primary">Ingresa Tus Datos para crear tu cuenta personal</p>
+      <br/>
+      </div>
+      <div className = 'col-sm-12 col-xl-6'>
+         <div className='input-group form-group'>
+            <div className="input-group-prepend">
+            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/></svg></span>
             </div>
-            <div className='col-xl-12 col-sm-12'>
-                <div className='input-group form-group'>
-                    <div className="input-group-prepend">
-                        <span className="input-group-text social_icon ">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
-                            </svg>
-                        </span>
-                    </div>
-                    <input
-                        className='form-control'
-                        type="text"
-                        name="run"
-                        placeholder="Ingrese Nombre"
-                        onChange={'estadoRun'}
-                        value={'run'}
-                        maxLength={9}
-                    />
-                </div>
+            <input
+               className='form-control'
+               type="text"
+               name="nombre"
+               placeholder="Ingrese Nombre"
+               onChange={''}
+               value={''}
+               />
             </div>
-        </form>
-    </div>
-  );
+            <div className='input-group form-group'>
+               <div className="input-group-prepend">
+               <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+               </div>
+               <input
+                  className='form-control'
+                  type="text"
+                  name="telefono"
+                  placeholder="Ingrese Telefono"
+                  onChange={''}
+                  value={''}
+               />
+            </div>
+            <div className='input-group form-group'>
+                  <div className="input-group-prepend">
+                  <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span>
+                  </div>
+                  <input
+                     className='form-control'
+                     type="text"
+                     name="run"
+                     placeholder="Ingrese Run"
+                     onChange={''}
+                     value={''}
+                     />
+            </div>
+      </div>
+      <div className = 'col-sm-12 col-xl-6'>
+         <div className='input-group form-group'>
+            <div className="input-group-prepend">
+            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.25 13c0 .69-.56 1.25-1.25 1.25S7.75 13.69 7.75 13s.56-1.25 1.25-1.25 1.25.56 1.25 1.25zM15 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm7 .25c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zM10.66 4.12C12.06 6.44 14.6 8 17.5 8c.46 0 .91-.05 1.34-.12C17.44 5.56 14.9 4 12 4c-.46 0-.91.05-1.34.12zM4.42 9.47c1.71-.97 3.03-2.55 3.66-4.44C6.37 6 5.05 7.58 4.42 9.47zM20 12c0-.78-.12-1.53-.33-2.24-.7.15-1.42.24-2.17.24-3.13 0-5.92-1.44-7.76-3.69C8.69 8.87 6.6 10.88 4 11.86c.01.04 0 .09 0 .14 0 4.41 3.59 8 8 8s8-3.59 8-8z"/></svg></span>
+            </div>
+            <input
+               className='form-control'
+               type="text"
+               name="apellido"
+               placeholder="Ingrese Apellido"
+               onChange={''}
+               value={''}
+            />
+         </div>
+         <div className='input-group form-group'>
+            <div className="input-group-prepend">
+            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+            </div>
+            <input
+               className='form-control'
+               type="text"
+               name="email"
+               placeholder="Ingrese Correo Electronico"
+               onChange={''}
+               value={''}
+            />
+         </div>
+                    
+      </div>
+      <div className='col-sm-12 col-xl-62'>
+         <p class="text-primary" >Ingrese Credenciales</p>
+         <div className='row'>
+            <div className='col-sm-12 col-xl-6'>
+               <div className='input-group form-group'>
+                  <div className="input-group-prepend">
+                  <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></span>
+
+                  </div>
+                  <input
+                  className='form-control'
+                  type="text"
+                  name="username"
+                  placeholder="Ingrese Username"
+                  onChange={''}
+                  value={''}
+                  />
+               </div>
+            </div>
+            <div className='col-sm-12 col-xl-6'>
+               <div className='input-group form-group'>
+                  <div className="input-group-prepend">
+                  <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>
+                  </div>
+               <input
+                  className='form-control'
+                  type="text"
+                  name="password"
+                  placeholder="Ingrese Password"
+                  onChange={''}
+                  value={''}
+               />
+               
+            </div><br/>
+            </div>
+            
+         </div>
+         <div className='row'>
+               <div className='col-sm-12 col-xl-6'>
+                  <h5>mensaje</h5>
+               </div>
+               <div className='col-sm-12 col-xl-6'>
+                  <button
+                     type="submit"
+                     className="btn btn-block btn-outline-warning">
+                     Ingresar
+                  </button>
+               </div>
+         </div>
+      </div>
+   </div>
+</>
+);
 }
 export default PersonaNatural;

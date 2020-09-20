@@ -45,6 +45,7 @@ const CredencialesEmpresa = () => {
             comprovarPassword:''
             
         })
+        estadoMensaje('');
     }
 
     const GenerarCredenciales = () =>{
