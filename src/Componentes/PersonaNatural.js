@@ -15,8 +15,161 @@ const PersonaNatural = () =>{
       password:''
       
    })
+  
+   const obtenerValor = e =>{
+      console.log(e.target.value);
+      actualizarPersonaNatural({
+         ...PersonaNatural,
+         [e.target.name]: e.target.value 
+      
+      })
+   }
+   const {nombre,apellido,telefono,run,email,username,password} = PersonaNatural;
+
+   // stado para mostrar ejemplo email
+   const [ejemploEmail, actualizarEjemploEmail] = useState(true);
+
+   //estado para cambiar mensaje de error
+    const [mensajeError, estadoMensaje] = useState('');
+
+   //estado para cambiar color mensaje error
+   const [claseError, estadoClaseMensaje] = useState('');
+
+ //funcion para validar que username y password no tengan espacios vacios..
+      const ContieneEspaciosVacios = (cadena) => {
+
+         let  contiene;
+         const listaFinal = [];
+         const listaCaracteresCadena = cadena.split('');
+     
+         listaCaracteresCadena.forEach(element => {
+             if(element !== ' '){
+                 listaFinal.push(element);
+             }
+     
+         });
+     
+             if(listaFinal.length !== listaCaracteresCadena.length ){
+                 contiene = true;
+             }else{
+                 contiene = false;
+             }
+     
+         return contiene;
+     }
+
+     //validar email
+     function validarEmail(email) {
+
+      if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
+          return true;
+      }else{
+          return false;
+      }
+  
+    }
+   //validar Datos 
+   const ValidarPersonaNatural = e =>{
+      e.preventDefault();
+
+      if(nombre.trim()===''){
+         estadoMensaje('Ingrese Nombre..!!');
+         estadoClaseMensaje('error');
+         e.target[0].focus();
+         return;
+      }else{
+         if(apellido.trim()===''){
+            estadoMensaje('ingrese Apellido..!!');
+            estadoClaseMensaje('error');
+            e.target[3].focus();
+            return;
+         }else{
+            if(telefono.trim()===''){
+               estadoMensaje('ingrese Telefono..!!');
+               estadoClaseMensaje('error');
+               e.target[1].focus();
+               return;
+            }else{
+               if(email.trim()===''){
+                  estadoMensaje('ingrese Email..!!');
+                  estadoClaseMensaje('error');
+                  e.target[4].focus();
+                  return;
+               }else{
+                  if(validarEmail(email)===false){
+                     estadoMensaje('revise formato email sea el correcto..!!');
+                     e.target[4].value='';
+                     estadoClaseMensaje('error');
+                     e.target[4].focus();
+                     actualizarEjemploEmail(false);
+                     actualizarEjemploEmail();
+                     
+                     return;
+                  }else{
+                     if(run.trim()===''){
+                        estadoMensaje('ingrese Run..!!');
+                        estadoClaseMensaje('error');
+                        e.target[2].focus();
+                        return;
+                     }else{
+                        if(run.length < 9){
+                           estadoMensaje('run debe tener 9 caracteres..!!');
+                           estadoClaseMensaje('error');
+                           e.target[2].focus();
+                           return;
+                        }else{
+                           if(isNaN(run)===true){
+                              estadoMensaje('run debe ser solo valores numericos..!!');
+                              estadoClaseMensaje('error');
+                              e.target[2].focus();
+                              return;
+                           }else{
+                              if(username.trim()===''){
+                                 estadoMensaje('Ingrese Username..!!');
+                                 estadoClaseMensaje('error');
+                                 e.target[5].focus();
+                                 return;
+                              }else{
+                                 if(ContieneEspaciosVacios(username)===true){
+                                    estadoMensaje('Username No Puede Contener Espacios Vacios!!');
+                                    estadoClaseMensaje('error');
+                                    e.target[5].focus();
+                                    return;
+                                 }else{
+                                    if(password.trim()===''){
+                                       estadoMensaje('ingrese password');
+                                       estadoClaseMensaje('error');
+                                       e.target[6].focus();
+                                       return;
+                                    }else{
+                                       if(ContieneEspaciosVacios(password)===true){
+                                          estadoMensaje('Password no puede tener espacios vacios..!');
+                                          estadoClaseMensaje('error');
+                                          e.target[6].focus();
+                                          return;
+                                       }else{
+                                          estadoMensaje('paso..!');
+                                       }
+                                      
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
   return (
 <>
+<form 
+      onSubmit={ValidarPersonaNatural}
+>
+
   <div className='row  form-persona-Natural col-sm-12 col-xl-6'>
       <div className='col-sm-12 col-xl-12'>
          <h3>Registro Persona Natural</h3>
@@ -33,8 +186,9 @@ const PersonaNatural = () =>{
                type="text"
                name="nombre"
                placeholder="Ingrese Nombre"
-               onChange={''}
-               value={''}
+               onChange={obtenerValor}
+               value={nombre}
+               maxLength={30}
                />
             </div>
             <div className='input-group form-group'>
@@ -46,8 +200,9 @@ const PersonaNatural = () =>{
                   type="text"
                   name="telefono"
                   placeholder="Ingrese Telefono"
-                  onChange={''}
-                  value={''}
+                  onChange={obtenerValor}
+                  value={telefono}
+                  maxLength={12}
                />
             </div>
             <div className='input-group form-group'>
@@ -59,8 +214,9 @@ const PersonaNatural = () =>{
                      type="text"
                      name="run"
                      placeholder="Ingrese Run"
-                     onChange={''}
-                     value={''}
+                     onChange={obtenerValor}
+                     value={run}
+                     maxLength={9}
                      />
             </div>
       </div>
@@ -74,8 +230,9 @@ const PersonaNatural = () =>{
                type="text"
                name="apellido"
                placeholder="Ingrese Apellido"
-               onChange={''}
-               value={''}
+               onChange={obtenerValor}
+               value={apellido}
+               maxLength={30}
             />
          </div>
          <div className='input-group form-group'>
@@ -86,9 +243,10 @@ const PersonaNatural = () =>{
                className='form-control'
                type="text"
                name="email"
-               placeholder="Ingrese Correo Electronico"
-               onChange={''}
-               value={''}
+               placeholder={ejemploEmail? "Ingrese Email" : "Ej: juanPerez@gmail.com"}
+               onChange={obtenerValor}
+               value={email}
+               maxLength={60}
             />
          </div>
                     
@@ -107,8 +265,9 @@ const PersonaNatural = () =>{
                   type="text"
                   name="username"
                   placeholder="Ingrese Username"
-                  onChange={''}
-                  value={''}
+                  onChange={obtenerValor}
+                  value={username}
+                  maxLength={20}
                   />
                </div>
             </div>
@@ -122,17 +281,16 @@ const PersonaNatural = () =>{
                   type="text"
                   name="password"
                   placeholder="Ingrese Password"
-                  onChange={''}
-                  value={''}
+                  onChange={obtenerValor}
+                  value={password}
+                  maxLength={20}
                />
-               
             </div><br/>
             </div>
-            
          </div>
          <div className='row'>
                <div className='col-sm-12 col-xl-6'>
-                  <h5>mensaje</h5>
+               <h5 className={claseError}>{mensajeError}</h5>
                </div>
                <div className='col-sm-12 col-xl-6'>
                   <button
@@ -144,6 +302,7 @@ const PersonaNatural = () =>{
          </div>
       </div>
    </div>
+   </form>
 </>
 );
 }
