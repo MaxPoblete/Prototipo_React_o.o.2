@@ -145,13 +145,12 @@ const CredencialesEmpresa = () => {
                                     e.target[1].focus();
                                     return;
                                 }
-                                estadoMensaje('esta correcto');
-                                estadoClaseMensaje('error');
+                                estadoMensaje('Enviando...!');
+                                estadoClaseMensaje('enviado');
                                 return;
                             }
                         }
-                    }
-                    
+                    } 
                 }
         }
 }

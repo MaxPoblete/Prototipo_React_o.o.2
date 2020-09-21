@@ -6,7 +6,7 @@ body {
     font-family: 'Numans', sans-serif;
     position: relative;
     height: auto;
-  }
+}
 
 .cont-form{
     
@@ -55,16 +55,39 @@ body {
         height: auto;
     }
 
-.cont-form{
-    
-    width: 100%;
-    padding: 10px;
-    height: auto;
-    background-color: rgba(0,0,0,0.5) !important;
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    margin-top: 20%;
+    .cont-form{
+        
+        width: 100%;
+        padding: 10px;
+        height: auto;
+        background-color: rgba(0,0,0,0.5) !important;
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        margin-top: 20%;
+    }
 }
+  @media only screen and (max-width: 1300px) {
+    body {
+        background-image: url("img/fondo.jpg");
+        color:white;
+        width: 100%;
+        font-family: 'Numans', sans-serif;
+        position: relative;
+        height: auto;
+      }
+    
+    .cont-form{
+        
+        width: 30%;
+        padding: 10px;
+        height: auto;
+        background-color: rgba(0,0,0,0.5) !important;
+        position: absolute;
+        left: 33%;
+        right: 22%;
+        margin-top: 5%;
+    }
+
   }
 

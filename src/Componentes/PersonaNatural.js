@@ -149,8 +149,8 @@ const PersonaNatural = () =>{
                                           return;
                                        }else{
                                           estadoMensaje('paso..!');
+                                          estadoClaseMensaje('enviado');
                                        }
-                                      
                                     }
                                  }
                               }

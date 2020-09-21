@@ -6,10 +6,18 @@ import {Link} from 'react-router-dom';
 const Login = () => {
 
     //crear state de login
-    const [login ,ingresarSistema] = useState({
+    const [login , ingresarSistema] = useState({
         username:'',
         password:''
     });
+
+    const restablecer = () =>{
+
+        ingresarSistema({
+            username:'',
+            password:''
+        })
+    }
 
     //estado para cambiar mensaje de error
     const [mensajeError, estadoMensaje] = useState('');
@@ -102,12 +110,19 @@ const Login = () => {
                                     <h5 className={claseError}>{mensajeError}</h5>
                                 </div>
                             </div>
-                            <div className='col-xl-4 col-sm-12'>
+                            <div className='col-12'>
                                 <div>
                                     <button
                                         type="submit"
                                         className="btn btn-block btn-outline-warning">
                                         Ingresar
+                                    </button>
+                                </div> 
+                                <div>
+                                    <button
+                                        onClick={restablecer}
+                                        className="btn btn-block btn-outline-warning">
+                                        Restablecer
                                     </button>
                                 </div>                           
                             </div>
@@ -122,6 +137,7 @@ const Login = () => {
     </div>
     );
 }
+
 export default Login;
 
     

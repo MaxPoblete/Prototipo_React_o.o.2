@@ -142,7 +142,6 @@ const VerificarEmpresa = () => {
     </div>
     </div> 
 }
-
     </div>
   );
 }
