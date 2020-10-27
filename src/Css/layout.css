@@ -1,0 +1,10 @@
+
+
+@media (max-width: 576px) {
+
+    .titulo{
+        color: red;
+        content: "registro";
+    }
+
+}

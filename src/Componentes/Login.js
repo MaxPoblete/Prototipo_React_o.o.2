@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
+import Titulo from './Titulo';
 
 
 const Login = () => {
@@ -64,7 +65,10 @@ const Login = () => {
 
     <div className='cont-form'>
             <div className='col-xl-12 col-sm-12'>
-                <h2 className='titulo'>Ingreso Exconstructor</h2><br/>             
+                <Titulo
+                     titulo='Login Acceso'
+                />
+                <br/>             
             </div>
             <div className='col-xl-12 col-sm-12'>
                 <form  onSubmit={submitLogin}>

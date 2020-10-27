@@ -1,6 +1,8 @@
 import React ,{useState}from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Css/PersonaNatural.css'
+import '../Css/PersonaNatural.css';
+
+import Titulo from './Titulo';
 
 const PersonaNatural = () =>{
 
@@ -169,11 +171,12 @@ const PersonaNatural = () =>{
 <form 
       onSubmit={ValidarPersonaNatural}
 >
-
   <div className='row  form-persona-Natural col-sm-12 col-xl-6'>
       <div className='col-sm-12 col-xl-12'>
-         <h3>Registro Persona Natural</h3>
-         <p id="parrafo" class="text-primary">Ingresa Tus Datos para crear tu cuenta personal</p>
+        <Titulo 
+          titulo='Registro Persona Natural'
+        />
+        <p id="parrafo" class="text-primary">Ingresa Tus Datos para crear tu cuenta personal</p>
       <br/>
       </div>
       <div className = 'col-sm-12 col-xl-6'>
